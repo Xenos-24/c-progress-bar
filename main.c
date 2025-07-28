@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <time.h>
 
 #define MAX_BARS 50
 #define TASKS 5
 /*
-        Changes to make Make a """ int tasks_incomplete(Task task[]); """
-        Prototype : 
-            int tasks_incomplete(Task task[]){
+Changes to make Make a """ int tasks_incomplete(Task task[]); """
+Prototype : 
+int tasks_incomplete(Task task[]){
                 int tasks_incomplete = 0;
 
                 for (int i=0; i < TASKS; i++){    
@@ -36,6 +37,7 @@ int assign_random_step();
 
 
 int main(){
+    srand(time(NULL));
     Task task[TASKS];
     for (int i=0; i < TASKS; i++){
         task[i].id = i+1;
@@ -115,7 +117,7 @@ void clear_screen(){
 
 int assign_random_step(){
     int step;
-    step = rand() % 5 + 1;
+    step = rand() % 10 + 1;
     return step;
 }
 
